@@ -45,7 +45,7 @@ const NavBar = ({ currentUser }) => {
                     </div>
                 </div>
             </Container>
-            <Categories></Categories>
+            <Categories control></Categories>
         </div>
     )
 }
