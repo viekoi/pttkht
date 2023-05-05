@@ -34,9 +34,10 @@ const UserButton = ({ currentUser }) => {
             top-[30px]
             text-sm
             h-auto
+            z-[100]
           "
         >
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex flex-col cursor-pointer ">
             {currentUser ?
               <>
                 <MenuItem
