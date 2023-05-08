@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import Slider from '../Slider'
 import { usePathname, useSearchParams } from 'next/navigation';
 import { AiOutlineCamera, AiOutlineUsb } from 'react-icons/ai'
@@ -67,7 +66,7 @@ export const categories = [
 
 
 
-  
+
 
 
 
@@ -85,7 +84,7 @@ const Categories = () => {
 
   const slideCol = 8
 
-  
+
 
 
   function chunk(arr, size) {
@@ -104,23 +103,23 @@ const Categories = () => {
 
 
 
- 
- const slides = chunkCategories.map((items, index) => {
-  return (
-    <div className={`grid grid-cols-${slideCol} flex-[0_0_100%] `}    key={index}>
-      {items.map((item) => (
-        <div className={` col-span-1 `} key={item.label}>
-          <CategoryBox
-            label={item.label}
-            icon={item.icon}
-            selected={category === item.label}
 
-          />
-        </div>
-      ))}
-    </div>
-  )
-})
+  const slides = chunkCategories.map((items, index) => {
+    return (
+      <div className={`grid grid-cols-8 w-full `} key={index}>
+        {items.map((item) => (
+          <div className={` col-span-1 `} key={item.label}>
+            <CategoryBox
+              label={item.label}
+              icon={item.icon}
+              selected={category === item.label}
+
+            />
+          </div>
+        ))}
+      </div>
+    )
+  })
 
 
   if (!isMainPage) {
@@ -128,12 +127,14 @@ const Categories = () => {
   }
 
   return (
- 
-      
-        <Slider slides={slides}></Slider>
-      
-   
-   
+    <Container>
+
+      <Slider slides={slides}></Slider>
+    </Container>
+
+
+
+
   );
 }
 
